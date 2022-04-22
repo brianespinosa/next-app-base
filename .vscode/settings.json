@@ -20,6 +20,9 @@
     }
   ],
   "cssModules.camelCase": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
