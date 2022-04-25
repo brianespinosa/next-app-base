@@ -3,6 +3,8 @@ import './app.css';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Fathom from 'fathom-client';
+import { AnimatePresence } from 'framer-motion';
+
 import pkg from '../../package.json';
 
 import Head from 'next/head';
@@ -39,7 +41,12 @@ const App = ({ Component, pageProps }) => {
       <Head>
         <title>{pkg.name}</title>
       </Head>
-      <Component {...pageProps} />
+      <AnimatePresence
+        exitBeforeEnter
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <Component {...pageProps} />
+      </AnimatePresence>
     </>
   );
 };
